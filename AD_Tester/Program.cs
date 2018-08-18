@@ -133,7 +133,10 @@ namespace AD_Tester
 
         static void Main(string[] args)
         {
-            Boolean user_rights = HasUploadRights("schweitzerd");
+            //Boolean user_rights = HasUploadRights("schweitzerd");
+
+            Boolean user_rights = HasUploadRights("dewaarda");
+
         }
     }
 }
