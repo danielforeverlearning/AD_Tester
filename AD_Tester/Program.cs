@@ -131,11 +131,25 @@ namespace AD_Tester
             return false;
         }
 
+        public static Boolean ChangeEmailAddress(string sUserName, string newemailaddress)
+        {
+            System.DirectoryServices.DirectoryEntry de = SelectUserWhereUsername(sUserName);
+
+            if (null == de)
+                return false;
+
+            de.Properties["mail"].Value = newemailaddress;
+            return true;
+
+        }
+
         static void Main(string[] args)
         {
             //Boolean user_rights = HasUploadRights("schweitzerd");
+            //Boolean user_rights = HasUploadRights("dewaarda");
 
-            Boolean user_rights = HasUploadRights("dewaarda");
+            //Boolean user_rights = HasUploadRights("dongdong");
+            ChangeEmailAddress("dongd", "danrui.dong@woodbury.edu");
 
         }
     }
